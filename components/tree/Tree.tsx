@@ -257,7 +257,6 @@ const Tree = React.forwardRef<RcTree, TreeProps>((props, ref) => {
       showLine={showLine}
     />
   );
-
   return (
     // @ts-ignore
     <RcTree
@@ -280,8 +279,8 @@ const Tree = React.forwardRef<RcTree, TreeProps>((props, ref) => {
         cssVarCls,
       )}
       style={{ ...contextStyle, ...style }}
-      rootClassName={classNames(contextClassNames.root, rootClassName)}
-      rootStyle={{ ...contextStyles.root, ...rootStyle }}
+      rootClassName={classNames(contextClassNames.root, treeClassNames?.root,rootClassName)}
+      rootStyle={{ ...contextStyles.root, ...styles?.root,...rootStyle }}
       classNames={{
         item: classNames(contextClassNames.item, treeClassNames?.item),
         icon: classNames(contextClassNames.icon, treeClassNames?.icon),
